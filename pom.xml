@@ -4,4 +4,24 @@
   <artifactId>balazs-practice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>balazs-practice</name>
+  <packaging>jar</packaging>
+  <build>
+  <plugins>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.0.2</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>hu.gaborbalazs.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 </project>
