@@ -1,4 +1,4 @@
-package hu.gaborbalazs;
+package hu.practice.gaborbalazs.equalsandhashcode;
 
 public class Person {
 
