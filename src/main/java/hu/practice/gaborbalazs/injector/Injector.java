@@ -2,8 +2,8 @@ package hu.practice.gaborbalazs.injector;
 
 public class Injector {
 	
-	public static Object getInstance(Class type) {
-		Object instance = null;
+	public static <T> T getInstance(Class<T> type) {
+		T instance = null;
 		try {
 			instance = type.newInstance();
 		} catch (InstantiationException e) {
