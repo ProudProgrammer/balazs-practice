@@ -6,10 +6,10 @@
   </appender>
 
   <logger name="deng" level="DEBUG"/>
-  
   <logger name="hu.gaborbalazs.spring.boot.SampleController" level="DEBUG"/>
+  <logger name="hu.gaborbalazs.spring.applicationcontext.App" level="DEBUG"/>
 
-  <root level="INFO">
+  <root level="WARN">
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>
