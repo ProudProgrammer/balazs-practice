@@ -1,5 +1,7 @@
 package hu.gaborbalazs.spring.boot;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
@@ -21,6 +23,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan
 public class SampleController {
 	
+	private final Logger LOGGER = LoggerFactory.getLogger(SampleController.class);
+	
 	@Autowired
 	private TestService service;
 	
@@ -31,17 +35,38 @@ public class SampleController {
     
     @RequestMapping(value = "/testJson", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
     public TestDto testJson() {
+    	LOGGER.debug("testJson() called");
+    	return new TestDto("Hello String", 10);
+    }
+    
+    @RequestMapping(value = "/testAnotherJson", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
+    public TestDto testAnotherJson() {
+    	LOGGER.debug("testAnotherJson() called");
     	return new TestDto("Hello String", 10);
     }
     
     @RequestMapping(value = "/testXml", method = RequestMethod.GET, produces = "application/xml; charset=UTF-8")
     public TestDto testXml() {
+    	LOGGER.debug("testXml() called");
+    	return new TestDto("Hello String", 10);
+    }
+    
+    @RequestMapping(value = "/testAnotherXml", method = RequestMethod.GET, produces = "application/xml; charset=UTF-8")
+    public TestDto testAnotherXml() {
+    	LOGGER.debug("testAnotherXml() called");
     	return new TestDto("Hello String", 10);
     }
     
     @RequestMapping("/add")
     public int add() {
+    	LOGGER.debug("add() called");
     	return service.add(10, 20);
+    }
+    
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello(@RequestParam Long id, @RequestHeader String text) {
+    	String myheader = "header";
+    	return "Hello param: " + id + ", Hello header: " + text + "Hello " + myheader;
     }
     
     @Bean
