@@ -21,6 +21,9 @@ public class App {
 	@Qualifier("impl2")
 	private TestService service2;
 	
+	@Autowired
+	private TestService impl1;
+	
 	
 	public static void main(String[] args) {
 
@@ -29,5 +32,6 @@ public class App {
 		
 		System.out.println("Hello, " + app.service.add(10, 20));
 		System.out.println("Hello, " + app.service2.add(10, 20));
+		System.out.println("Hello, " + app.impl1.add(10, 20));
 	}
 }
