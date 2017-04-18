@@ -2,8 +2,11 @@ package hu.gaborbalazs.date;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +40,19 @@ public class App {
 		calendar.set(Calendar.SECOND, 0);
 		calendar.set(Calendar.MILLISECOND, 0);
 		System.out.println("Current date without time: " + calendar.getTimeInMillis());
+		
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+
+		String time = "2017-04-10T13:31:00";
+		String timeZone = "Europe/Prague";
+
+		LocalDateTime dateTime = LocalDateTime.parse(time, formatter2);
+		ZoneId z = ZoneId.of(timeZone);
+
+		System.out.println("datetime:\t " + dateTime + ", zoneid: " + z);
+		System.out.println("millis:\t\t " + ZonedDateTime.of(dateTime, z).toInstant().toEpochMilli());
+		System.out.println("now:\t\t " + Instant.now());
+		System.out.println("millis:\t\t " + Instant.now().toEpochMilli());
 		
 		System.out.println("Goodbye Date");
 	}
