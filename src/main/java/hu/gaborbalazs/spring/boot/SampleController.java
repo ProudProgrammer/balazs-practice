@@ -69,6 +69,11 @@ public class SampleController {
     	return "Hello param: " + id + ", Hello header: " + text + "Hello " + myheader;
     }
     
+    @RequestMapping(value = "/mapping", method = RequestMethod.POST)
+    public String mapping(@RequestBody TestDto dto) {
+    	return "StringField: " + dto.getStringField();
+    }
+    
     @Bean
     public Docket api() { 
         return new Docket(DocumentationType.SWAGGER_2)  

@@ -2,6 +2,8 @@ package hu.gaborbalazs.spring.boot;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -45,4 +47,7 @@ public class TestDto {
 		this.anotherStringField = anotherStringField;
 	}
 	
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 }

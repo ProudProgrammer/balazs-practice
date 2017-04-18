@@ -1,4 +1,4 @@
-package hu.gaborbalazs.test;
+package hu.gaborbalazs.algorithms;
 
 public class App {
 	
