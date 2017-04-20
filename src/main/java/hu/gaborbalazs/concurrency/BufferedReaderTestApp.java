@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class App {
+public class BufferedReaderTestApp {
 	
 	private static Object lock1 = new Object();
 	private static Object lock2 = new Object();
