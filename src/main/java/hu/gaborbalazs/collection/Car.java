@@ -1,4 +1,4 @@
-package hu.gaborbalazs.test;
+package hu.gaborbalazs.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
