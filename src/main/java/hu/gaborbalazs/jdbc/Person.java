@@ -10,7 +10,7 @@ public class Person {
 	private String name;
 	private LocalDateTime registration;
 	
-	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSS"); 
+	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
 	
 	public Person() {}
 	
