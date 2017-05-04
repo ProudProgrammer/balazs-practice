@@ -1,4 +1,4 @@
-package hu.gaborbalazs.test;
+package hu.gaborbalazs.algorithms;
 
 import java.util.List;
 
