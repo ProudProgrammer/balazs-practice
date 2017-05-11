@@ -2,7 +2,7 @@ package hu.gaborbalazs.l10n;
 
 import java.util.ListResourceBundle;
 
-public class test_hu_HU extends ListResourceBundle {
+public class test_hu_HUN extends ListResourceBundle {
 
 	@Override
 	protected Object[][] getContents() {

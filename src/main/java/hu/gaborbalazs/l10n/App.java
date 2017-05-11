@@ -17,6 +17,7 @@ public class App {
 		System.out.println("3=" + rs.getString("3"));
 		System.out.println("4=" + rs.getString("4"));
 		System.out.println("5=" + rs.getString("5"));
+		System.out.println("6=" + rs.getString("6"));
 		System.out.println("End");
 	}
 }
