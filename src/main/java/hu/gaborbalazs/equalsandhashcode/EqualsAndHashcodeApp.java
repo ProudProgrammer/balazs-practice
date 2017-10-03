@@ -1,4 +1,4 @@
-package hu.practice.gaborbalazs.equalsandhashcode;
+package hu.gaborbalazs.equalsandhashcode;
 
 import java.util.HashSet;
 
