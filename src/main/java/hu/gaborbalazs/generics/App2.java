@@ -11,7 +11,7 @@ public class App2 {
 		System.out.println(">> main()");
 
 		String s = method(Type.STRING);
-		Integer i = method(Type.INTEGER);
+		Integer i = App2.<Integer>method(Type.INTEGER);
 		System.out.println("s: " + s);
 		System.out.println("i: " + i);
 
