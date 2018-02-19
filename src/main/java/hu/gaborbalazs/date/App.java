@@ -55,6 +55,11 @@ public class App {
 		System.out.println("millis:\t\t " + Instant.now().toEpochMilli());
 		System.out.println("datetime:\t" + ZonedDateTime.of(LocalDateTime.parse("2017-04-01T12:00:00", formatter2), ZoneId.of("America/New_York")));
 		
+		//Date to LocalDate
+		Date nowDate = new Date();
+		LocalDate nowLocalDate = nowDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		System.out.println("nowDate: " + nowDate + ", nowLocalDate: " + nowLocalDate);
+		
 		System.out.println("Goodbye Date");
 	}
 
