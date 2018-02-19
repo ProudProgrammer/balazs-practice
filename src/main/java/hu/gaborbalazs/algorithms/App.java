@@ -60,18 +60,14 @@ public class App {
 	}
 	
 	private static Set<Integer> generate(int from, int to, int count) {
-		if (from < 1 || to < 1 || count < 1 || from >= to) {
+		if (from < 1 || from >= to || count < 1) {
 			throw new IllegalArgumentException("Incorrect arguments");
 		}
 		int interval = to - from;
 		Set<Integer> nums = new HashSet<>();
 		RandomImpl randomImpl = new RandomImpl();
 		while(nums.size() < count) {
-			int randomNum = randomImpl.nextInt();
-			if (randomNum < 0) {
-				randomNum *= -1;
-			}
-			nums.add(randomNum % interval + from);
+			nums.add((Math.abs(randomImpl.nextInt()) % interval) + from);
 		}
 		return nums;
 	}
