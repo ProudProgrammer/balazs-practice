@@ -10,30 +10,33 @@ public class App {
 
 		System.out.println("begin");
 		
+		App app = new App();
+		
 		// Exercise 1 - Palindrome
 		
 		String text1 = "bob";
 		String text2 = "nagan";
 		String text3 = "balazs";
 
-		System.out.println(text1 + " is a palindrome: "  + isPalindrome(text1));
-		System.out.println(text2 + " is a palindrome: "  + isPalindrome(text2));
-		System.out.println(text3 + " is a palindrome: "  + isPalindrome(text3));
+		System.out.println(text1 + " is a palindrome: "  + app.isPalindrome(text1));
+		System.out.println(text2 + " is a palindrome: "  + app.isPalindrome(text2));
+		System.out.println(text3 + " is a palindrome: "  + app.isPalindrome(text3));
 		
-		// Exercise 2
+		// Exercise 2 - Adding numbers while remain only one
+		// Example: input: 555, output: 6 (5 + 5 + 5 = 15, 1 + 5 = 6)
 		
 		int num1 = 123456789;
 		
-		System.out.println(specialSum(num1));
+		System.out.println(app.specialSum(num1));
 		
 		// Exercise 3 - Lottery number generator: given a Random interface which returns a random integer
 		
-		System.out.println(generate(1, 91, 5));
+		System.out.println(app.generate(1, 91, 5));
 		
 		System.out.println("end");
 	}
 	
-	private static boolean isPalindrome(CharSequence input) {
+	public boolean isPalindrome(CharSequence input) {
 		if(input == null || "".equals(input)) {
 			throw new IllegalArgumentException("Input is null or blank!");
 		}
@@ -43,7 +46,7 @@ public class App {
 		return false;
 	}
 	
-	private static int specialSum(int num) {
+	public int specialSum(int num) {
 		if(num < 10 && num > -10) {
 			return num;
 		}
@@ -59,7 +62,7 @@ public class App {
 		return result;
 	}
 	
-	private static Set<Integer> generate(int from, int to, int count) {
+	public Set<Integer> generate(int from, int to, int count) {
 		if (from < 1 || from >= to || count < 1) {
 			throw new IllegalArgumentException("Incorrect arguments");
 		}
