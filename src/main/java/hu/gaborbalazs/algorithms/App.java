@@ -18,9 +18,9 @@ public class App {
 		String text2 = "nagan";
 		String text3 = "balazs";
 
-		System.out.println(text1 + " is a palindrome: "  + app.isPalindrome(text1));
-		System.out.println(text2 + " is a palindrome: "  + app.isPalindrome(text2));
-		System.out.println(text3 + " is a palindrome: "  + app.isPalindrome(text3));
+		System.out.println(text1 + " is a palindrome: "  + app.isPalindrome(text1) + ", " + app.isPalindrome2(text1));
+		System.out.println(text2 + " is a palindrome: "  + app.isPalindrome(text2) + ", " + app.isPalindrome2(text2));
+		System.out.println(text3 + " is a palindrome: "  + app.isPalindrome(text3) + ", " + app.isPalindrome2(text3));
 		
 		// Exercise 2 - Adding numbers while remain only one
 		// Example: input: 555, output: 6 (5 + 5 + 5 = 15, 1 + 5 = 6)
@@ -33,6 +33,8 @@ public class App {
 		
 		System.out.println(app.generate(1, 91, 5));
 		
+		
+		
 		System.out.println("end");
 	}
 	
@@ -44,6 +46,19 @@ public class App {
 			return true;
 		}
 		return false;
+	}
+	
+	public boolean isPalindrome2(String input) {
+		if (input == null || input.length() < 2) {
+			throw new IllegalArgumentException("Incorrect input");
+		}
+		String[] inputAsArray = input.split("");
+		for (int i = 0; i < inputAsArray.length / 2; i++) {
+			if (!inputAsArray[i].equals(inputAsArray[inputAsArray.length-1-i])) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public int specialSum(int num) {
