@@ -33,7 +33,9 @@ public class App {
 		
 		System.out.println(app.generate(1, 91, 5));
 		
+		// Exercise 4 - Count zeros in a number
 		
+		System.out.println(app.countZeros(-1007));
 		
 		System.out.println("end");
 	}
@@ -88,6 +90,20 @@ public class App {
 			nums.add((Math.abs(randomImpl.nextInt()) % interval) + from);
 		}
 		return nums;
+	}
+	
+	public int countZeros(int num) {
+		return countZerosRecursively(num, 0);
+	}
+	
+	private int countZerosRecursively(int num, int counter) {
+		if (!(num <= -10 || num >= 10)) {
+			return counter;
+		}
+		if (num % 10 == 0) {
+			counter++;
+		}
+		return countZerosRecursively(num / 10, counter);
 	}
 }
 
