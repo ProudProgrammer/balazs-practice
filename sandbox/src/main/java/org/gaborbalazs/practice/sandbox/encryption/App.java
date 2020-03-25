@@ -1,5 +1,7 @@
 package org.gaborbalazs.practice.sandbox.encryption;
 
+import java.io.FileNotFoundException;
+
 public class App {
 
     public static void main(String[] args) {
@@ -8,11 +10,10 @@ public class App {
 
         String password = "hello123";
         String encryptedPassword = Sha512Crypt.sha512Crypt(password, "", 0);
-        
+
         System.out.println("Password: " + password + ", Encrypted: " + encryptedPassword);
         System.out.println("Verify: " + Sha512Crypt.verifyPassword(password, encryptedPassword));
-        
+
         System.out.println("<< main");
     }
-
 }
