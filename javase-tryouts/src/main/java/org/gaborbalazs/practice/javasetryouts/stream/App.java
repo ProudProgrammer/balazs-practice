@@ -1,12 +1,12 @@
 package org.gaborbalazs.practice.javasetryouts.stream;
 
+import com.google.common.base.MoreObjects;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.google.common.base.MoreObjects;
 
 public class App {
 
@@ -18,9 +18,8 @@ public class App {
         List<Store> stores = Arrays.asList(carStore, junkStore);
 
         Map<String, List<Store>> storesMap = new HashMap<>();
-        stores.stream().flatMap(store -> store.getThings().stream())
-                .forEach(thing -> storesMap.put(thing, new ArrayList<>()));
-        stores.stream().forEach(store -> store.getThings().stream().forEach(thing -> storesMap.get(thing).add(store)));
+        stores.stream().flatMap(store -> store.getThings().stream()).forEach(thing -> storesMap.put(thing, new ArrayList<>()));
+        stores.forEach(store -> store.getThings().forEach(thing -> storesMap.get(thing).add(store)));
         System.out.println(storesMap);
     }
 

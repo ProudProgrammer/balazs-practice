@@ -10,6 +10,13 @@
     </parent>
     <artifactId>javase-tryouts</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
