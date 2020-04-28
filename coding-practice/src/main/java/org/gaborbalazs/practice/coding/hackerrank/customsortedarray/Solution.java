@@ -1,17 +1,6 @@
 package org.gaborbalazs.practice.coding.hackerrank.customsortedarray;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
+import java.util.List;
 
 
 class Result {
@@ -24,8 +13,21 @@ class Result {
      */
 
     public static int moves(List<Integer> arr) {
-        // Write your code here
-        return 0;
+        int numberOfSwap = 0;
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) % 2 != 0) {
+                for (int j = arr.size() - 1; j > i; j--) {
+                    if (arr.get(j) % 2 == 0) {
+                        int firstOdd = arr.get(i);
+                        arr.set(i, arr.get(j));
+                        arr.set(j, firstOdd);
+                        numberOfSwap++;
+                        break;
+                    }
+                }
+            }
+        }
+        return numberOfSwap;
     }
 
 }
