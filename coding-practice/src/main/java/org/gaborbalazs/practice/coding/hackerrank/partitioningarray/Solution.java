@@ -1,17 +1,9 @@
 package org.gaborbalazs.practice.coding.hackerrank.partitioningarray;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 class Result {
@@ -26,8 +18,17 @@ class Result {
      */
 
     public static String partitionArray(int k, List<Integer> numbers) {
-        // Write your code here
-        return "";
+        String result = "Yes";
+        if (numbers.size() % k != 0) {
+            result = "No";
+        }
+        int partitions = numbers.size() / k;
+        Map<Integer, Long> counts = numbers.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        int maxRecurrence = Collections.max(counts.values()).intValue();
+        if (maxRecurrence > partitions) {
+            result = "No";
+        }
+        return result;
     }
 
 }
