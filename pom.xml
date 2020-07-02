@@ -22,7 +22,7 @@
         <junit-jupiter.version>5.5.1</junit-jupiter.version>
         <mockito-junit-jupiter.version>3.0.0</mockito-junit-jupiter.version>
         <mockito-core.version>3.0.0</mockito-core.version>
-        <mysql-connector.version>6.0.6</mysql-connector.version>
+        <mysql-connector.version>8.0.16</mysql-connector.version>
         <activemq.version>5.15.0</activemq.version>
         <lettuce-core.version>5.1.0.M1</lettuce-core.version>
         <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
