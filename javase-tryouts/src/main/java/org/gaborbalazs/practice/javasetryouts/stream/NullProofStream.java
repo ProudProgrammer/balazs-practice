@@ -26,13 +26,17 @@ public class NullProofStream {
 
     }
 
-    public Double getNumber(List<Bundle> list) {
+    public double getNumber(List<Bundle> list) {
         return Optional
                 .ofNullable(list)
                 .orElseGet(Collections::emptyList)
                 .stream()
                 .findFirst()
-                .orElseGet(Bundle::new)
+                .orElseGet(() -> {
+                    Bundle bundle = new Bundle();
+                    bundle.setNumber(0d);
+                    return bundle;
+                })
                 .getNumber();
     }
 }
