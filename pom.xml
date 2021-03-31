@@ -27,7 +27,7 @@
         <lettuce-core.version>5.1.0.M1</lettuce-core.version>
         <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
         <glassfish-javax-el.version>3.0.1-b08</glassfish-javax-el.version>
-        <google-guava.version>28.2-jre</google-guava.version>
+        <google-guava.version>29.0-jre</google-guava.version>
     </properties>
 
     <modules>
