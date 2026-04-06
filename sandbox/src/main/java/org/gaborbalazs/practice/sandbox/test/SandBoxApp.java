@@ -1,8 +1,8 @@
 package org.gaborbalazs.practice.sandbox.test;
 
-public class SandBoxApp {
+class SandBoxApp {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         System.out.println(">> main()");
 

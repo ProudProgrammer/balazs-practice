@@ -4,19 +4,44 @@ import java.util.Scanner;
 
 class Solution {
 
-    public static void main(String[] argh) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        for (int i = 0; i < t; i++) {
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int n = in.nextInt();
-            for (int j = 0; j < n; j++) {
-                a += Math.pow(2, j) * b;
-                System.out.print(a + " ");
+    private static final String EMPTY = " ";
+
+    static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+
+        String[][] lines = getLines();
+        for (String[] strings : lines) {
+            int a = Integer.parseInt(strings[0]);
+            int b = Integer.parseInt(strings[1]);
+            int n = Integer.parseInt(strings[2]);
+            double result = a;
+            for (int i = 0; i < n; i++) {
+                result += Math.pow(2, i) * b;
+                System.out.print((int) result);
+                if (i != n - 1) {
+                    System.out.print(EMPTY);
+                }
             }
             System.out.println();
         }
-        in.close();
+    }
+
+    private static String[][] getLines() {
+        String[][] lines;
+        try (Scanner scanner = new Scanner(System.in)) {
+            int q = 0;
+            if (scanner.hasNext()) {
+                q = scanner.nextInt();
+                scanner.nextLine();
+            }
+            lines = new String[q][3];
+            int currentLine = 0;
+            while (currentLine < q && scanner.hasNext()) {
+                lines[currentLine] = scanner.nextLine().split(EMPTY);
+                currentLine++;
+            }
+        }
+        return lines;
     }
 }
+

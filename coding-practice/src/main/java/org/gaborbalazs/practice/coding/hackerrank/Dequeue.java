@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Dequeue {
+class Dequeue {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	static void main(String[] args) throws FileNotFoundException {
 		long counter = System.currentTimeMillis();
 		Scanner in = new Scanner(
 				new File("C:\\Balazs\\MyRepos\\balazs-practice\\src\\main\\java\\hu\\gaborbalazs\\test\\input.txt"));
