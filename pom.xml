@@ -23,7 +23,7 @@
         <mockito-junit-jupiter.version>3.0.0</mockito-junit-jupiter.version>
         <mockito-core.version>3.0.0</mockito-core.version>
         <mysql-connector.version>8.0.28</mysql-connector.version>
-        <activemq.version>5.15.0</activemq.version>
+        <activemq.version>5.19.4</activemq.version>
         <lettuce-core.version>5.1.0.M1</lettuce-core.version>
         <hibernate-validator.version>5.4.2.Final</hibernate-validator.version>
         <glassfish-javax-el.version>3.0.1-b08</glassfish-javax-el.version>
