@@ -1,10 +1,8 @@
 package org.gaborbalazs.practice.sandbox.encryption;
 
-import java.io.FileNotFoundException;
-
 public class App {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         System.out.println(">> main");
 
