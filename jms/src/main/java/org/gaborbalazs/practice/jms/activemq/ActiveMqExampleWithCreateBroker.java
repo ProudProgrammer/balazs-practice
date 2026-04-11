@@ -1,7 +1,6 @@
 package org.gaborbalazs.practice.jms.activemq;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -17,7 +16,7 @@ import org.apache.activemq.broker.BrokerService;
 
 public class ActiveMqExampleWithCreateBroker {
 
-	public static void main(String[] args) throws URISyntaxException, Exception {
+	static void main(String[] args) throws Exception {
 		BrokerService broker = BrokerFactory.createBroker(new URI("broker:(tcp://localhost:61616)"));
 		broker.start();
 		Connection connection = null;

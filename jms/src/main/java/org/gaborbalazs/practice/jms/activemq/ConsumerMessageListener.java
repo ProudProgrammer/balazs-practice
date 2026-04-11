@@ -6,7 +6,8 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 public class ConsumerMessageListener implements MessageListener {
-	private String consumerName;
+
+    private final String consumerName;
 
 	public ConsumerMessageListener(String consumerName) {
 		this.consumerName = consumerName;
@@ -20,5 +21,4 @@ public class ConsumerMessageListener implements MessageListener {
 			e.printStackTrace();
 		}
 	}
-
 }
