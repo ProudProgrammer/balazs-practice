@@ -1,4 +1,4 @@
 package org.gaborbalazs.practice.coding.interviews.createsearchindex;
 
-public record Product (int id, String name) {
+public record Result (int id, String name, int score) {
 }

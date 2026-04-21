@@ -1,0 +1,52 @@
+package org.gaborbalazs.practice.coding.interviews.createsearchindex;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SearchIndexServiceTest {
+
+    private static final String MILK = "Milk";
+    private static final String CHOCOLATE_MILK = "Chocolate Milk";
+
+    private SearchIndexService underTest;
+
+    @BeforeEach
+    void setUp() {
+        underTest = new SearchIndexService();
+    }
+
+    @Test
+    void shouldReturnProductsListBasedOnOneKeyword() {
+        List<Result> expected = createProductsMatchingWithMilk();
+
+        List<Result> result = underTest.searchProductsByKeywordsInName(MILK);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void shouldReturnProductsListBasedOnTwoKeywords() {
+        List<Result> expected = createProductsMatchingWithChocolateMilk();
+
+        List<Result> result = underTest.searchProductsByKeywordsInName(CHOCOLATE_MILK);
+
+        assertEquals(expected, result);
+    }
+
+    private List<Result> createProductsMatchingWithMilk() {
+        return List.of(new Result(1, "Amul milk", 44),
+                new Result(3, "Milk Chocolate", 28),
+                new Result(4, "Chocolate Milk", 28),
+                new Result(2, "Nandini Chocolate Milk", 18));
+    }
+
+    private List<Result> createProductsMatchingWithChocolateMilk() {
+        return List.of(new Result(3, "Milk Chocolate", 100),
+                new Result(4, "Chocolate Milk", 100),
+                new Result(2, "Nandini Chocolate Milk", 63));
+    }
+}
