@@ -41,9 +41,9 @@ public class SearchIndexService {
         return matcher.find();
     }
 
-    private int getScore(String text, String keyword) {
+    private int getScore(String text, String keywords) {
         int lengthOfText = text.length();
-        int lengthOfKeyword = keyword.length();
+        int lengthOfKeyword = keywords.length();
         return (int) (((double) lengthOfKeyword / lengthOfText) * 100);
     }
 }
