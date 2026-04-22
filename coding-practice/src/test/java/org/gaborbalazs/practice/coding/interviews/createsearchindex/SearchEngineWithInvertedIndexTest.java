@@ -5,25 +5,25 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class SearchIndexServiceTest {
+class SearchEngineWithInvertedIndexTest {
 
     private static final String MILK = "Milk";
     private static final String CHOCOLATE_MILK = "Chocolate Milk";
 
-    private SearchIndexService underTest;
+    private SearchEngineWithInvertedIndex underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new SearchIndexService();
+        underTest = new SearchEngineWithInvertedIndex();
     }
 
     @Test
     void shouldReturnProductsListBasedOnOneKeyword() {
         List<Result> expected = createProductsMatchingWithMilk();
 
-        List<Result> result = underTest.searchProductsByKeywordsInName(MILK);
+        List<Result> result = underTest.search(MILK);
 
         assertEquals(expected, result);
     }
@@ -32,7 +32,7 @@ class SearchIndexServiceTest {
     void shouldReturnProductsListBasedOnTwoKeywords() {
         List<Result> expected = createProductsMatchingWithChocolateMilk();
 
-        List<Result> result = underTest.searchProductsByKeywordsInName(CHOCOLATE_MILK);
+        List<Result> result = underTest.search(CHOCOLATE_MILK);
 
         assertEquals(expected, result);
     }
@@ -45,8 +45,8 @@ class SearchIndexServiceTest {
     }
 
     private List<Result> createProductsMatchingWithChocolateMilk() {
-        return List.of(new Result(3, "Milk Chocolate", 100),
-                new Result(4, "Chocolate Milk", 100),
-                new Result(2, "Nandini Chocolate Milk", 63));
+        return List.of(new Result(3, "Milk Chocolate", 92),
+                new Result(4, "Chocolate Milk", 92),
+                new Result(2, "Nandini Chocolate Milk", 59));
     }
 }

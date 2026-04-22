@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SearchIndexService {
+public class SearchEngineWithRegex {
 
     private static final String EMPTY_SPACE = " ";
     private static final String WORD_BOUNDARY = "\\b";
 
     private final ProductDao productDao;
 
-    public SearchIndexService() {
+    public SearchEngineWithRegex() {
         productDao = new ProductDao();
     }
 
-    public List<Result> searchProductsByKeywordsInName(String keywords) {
+    public List<Result> search(String keywords) {
         String[] keywordsAsArray = keywords.split(EMPTY_SPACE);
         List<Result> result = new ArrayList<>();
         for (Product product : productDao.getAllProducts()) {
