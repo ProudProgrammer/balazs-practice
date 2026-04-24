@@ -2,17 +2,15 @@ package org.gaborbalazs.practice.coding.interviews.createsearchindex;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Objects;
 
-public class SearchEngineWithRegex {
+public class SearchEngineWithEquals {
 
     private static final String WHITE_SPACE = "\\s+";
-    private static final String WORD_BOUNDARY = "\\b";
 
     private final ProductDao productDao;
 
-    public SearchEngineWithRegex() {
+    public SearchEngineWithEquals() {
         productDao = new ProductDao();
     }
 
@@ -20,25 +18,20 @@ public class SearchEngineWithRegex {
         String[] keywordsAsArray = keywords.split(WHITE_SPACE);
         List<Result> result = new ArrayList<>();
         for (Product product : productDao.getAllProducts()) {
-            boolean isMatch = true;
-            for (String currentKeyword : keywordsAsArray) {
-                if (!isContainKeyword(product.name(), currentKeyword)) {
-                    isMatch = false;
-                    break;
+            int matchCounter = 0;
+            for (String productNameToken : product.name().split(WHITE_SPACE)) {
+                for (String keywordToken : keywordsAsArray) {
+                    if (Objects.equals(productNameToken.toLowerCase(), keywordToken.toLowerCase())) {
+                        matchCounter++;
+                    }
                 }
             }
-            if (isMatch) {
+            if (matchCounter == keywordsAsArray.length) {
                 result.add(new Result(product.id(), product.name(), getScore(product.name(), keywords)));
             }
         }
         result.sort((a, b) -> Integer.compare(b.score(), a.score()));
         return result;
-    }
-
-    private boolean isContainKeyword(String productName, String keyword) {
-        Pattern pattern = Pattern.compile(WORD_BOUNDARY + Pattern.quote(keyword) + WORD_BOUNDARY, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(productName);
-        return matcher.find();
     }
 
     private int getScore(String text, String keywords) {
