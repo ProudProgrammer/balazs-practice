@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class SearchEngineWithInvertedIndex {
 
+    private static final String WHITE_SPACE = "\\s+";
+
     // inverted index: word -> productIds
     private final Map<String, Set<Integer>> index = new HashMap<>();
     private final Map<Integer, Product> productMap = new HashMap<>();
@@ -26,7 +28,7 @@ public class SearchEngineWithInvertedIndex {
         if (tokens.isEmpty()) return List.of();
 
         // 1. Find intersection
-        Set<Integer> resultIds = new HashSet<>(index.getOrDefault(tokens.get(0), Set.of()));
+        Set<Integer> resultIds = new HashSet<>(index.getOrDefault(tokens.getFirst(), Set.of()));
 
         for (int i = 1; i < tokens.size(); i++) {
             resultIds.retainAll(index.getOrDefault(tokens.get(i), Set.of()));
@@ -48,7 +50,7 @@ public class SearchEngineWithInvertedIndex {
     }
 
     private List<String> tokenize(String text) {
-        return Arrays.stream(text.toLowerCase().split("\\s+"))
+        return Arrays.stream(text.toLowerCase().split(WHITE_SPACE))
                 .filter(s -> !s.isBlank())
                 .toList();
     }
