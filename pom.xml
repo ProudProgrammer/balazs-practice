@@ -17,18 +17,17 @@
         <maven.compiler.source>25</maven.compiler.source>
 
         <!-- 3rd party versions -->
-        <junit.version>4.13.1</junit.version>
-        <junit-params.version>1.1.1</junit-params.version>
-        <junit-jupiter.version>5.5.1</junit-jupiter.version>
-        <mockito-junit-jupiter.version>3.0.0</mockito-junit-jupiter.version>
-        <mockito-core.version>3.0.0</mockito-core.version>
-        <mysql-connector.version>8.0.28</mysql-connector.version>
-        <activemq.version>5.19.5</activemq.version>
-        <lettuce-core.version>5.1.0.M1</lettuce-core.version>
-        <hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
-        <glassfish-javax-el.version>3.0.1-b08</glassfish-javax-el.version>
-        <google-guava.version>29.0-jre</google-guava.version>
-        <apache-commons.version>3.20.0</apache-commons.version>
+        <junit4.version>4.13.1</junit4.version>
+        <junit4-params.version>1.1.1</junit4-params.version>
+        <junit-jupiter.version>6.1.0-M1</junit-jupiter.version>
+        <mockito-junit-jupiter.version>5.23.0</mockito-junit-jupiter.version>
+        <mysql-connector.version>8.0.33</mysql-connector.version>
+        <activemq.version>6.2.5</activemq.version>
+        <lettuce-core.version>7.5.1.RELEASE</lettuce-core.version>
+        <hibernate-validator.version>8.0.2.Final</hibernate-validator.version>
+        <glassfish.expressly.version>6.0.0</glassfish.expressly.version>
+        <google-guava.version>33.6.0-jre</google-guava.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
     </properties>
 
     <modules>
@@ -48,17 +47,17 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
+                <version>${junit4.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>pl.pragmatists</groupId>
                 <artifactId>JUnitParams</artifactId>
-                <version>${junit-params.version}</version>
+                <version>${junit4-params.version}</version>
                 <scope>test</scope>
             </dependency>
 
-            <!-- JUnit 5 dependencies -->
+            <!-- JUnit 6 dependencies -->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
@@ -66,15 +65,15 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-junit-jupiter</artifactId>
-                <version>${mockito-junit-jupiter.version}</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit-jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito-core.version}</version>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>${mockito-junit-jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -106,9 +105,9 @@
                 <version>${hibernate-validator.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.el</artifactId>
-                <version>${glassfish-javax-el.version}</version>
+                <groupId>org.glassfish.expressly</groupId>
+                <artifactId>expressly</artifactId>
+                <version>${glassfish.expressly.version}</version>
             </dependency>
 
             <!-- Google dependencies -->
@@ -122,7 +121,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${apache-commons.version}</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
 
             <dependency>

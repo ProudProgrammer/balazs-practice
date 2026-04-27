@@ -1,18 +1,16 @@
 package org.gaborbalazs.practice.javaeetryouts.validation.domain;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 public class Person {
 
 	@Min(2)
 	private int id;
-	
-	@NotNull 
+
+	@NotNull
 	private String name;
-	
+
 	@Min(2)
 	private int age;
-	
-	
 }
