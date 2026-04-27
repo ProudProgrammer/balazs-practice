@@ -1,9 +1,9 @@
 package org.gaborbalazs.practice.jms.activemq;
 
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.TextMessage;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageListener;
+import jakarta.jms.TextMessage;
 
 public class ConsumerMessageListener implements MessageListener {
 
